@@ -1,0 +1,11 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: orser-sentinel
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8058
+        # 默认将调用链路收敛了
+      web-context-unify: false

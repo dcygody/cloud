@@ -1,0 +1,25 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: public
+# springboot 默认日志级别是info  feign的debug不会输出
+logging:
+  level:
+    order.feign: debug
+feign:
+  client:
+    config:
+      product-service:
+        loggerLevel: BASIC
+        connectTimeout: 5000
+        readTimeout: 3000
+
+# feign 日志局部配置
